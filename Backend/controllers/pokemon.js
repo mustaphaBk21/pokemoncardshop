@@ -30,7 +30,8 @@ module.exports = {
     Pokemon.create({
         name : req.body.name ,
         image : req.body.image ,
-        description : req.body.description
+        description : req.body.description,
+        price:req.body.price
     })
     .then((pokemon)=>{
        res.status(201).json(pokemon)     
@@ -44,7 +45,8 @@ module.exports = {
         Pokemon.update({ 
             name :req.body.name , 
             image : req.body.image,
-            description : req.body.description
+            description : req.body.description,
+            price : req.body.price
         },{where :{id:id}})
         .then(([updated])=>{
             if(updated>0){
