@@ -11,7 +11,7 @@ const db = {}
 
 db.sequelize = sequelize
 db.pokemon = require('../models/pokemon') (sequelize , DataTypes)
-db.user = require('../models/user') (sequelize , DataTypes)
+
 
 
 sequelize.authenticate()
@@ -29,6 +29,5 @@ sequelize.authenticate()
 // .catch((error)=>{
 //     console.log(error)
 // })
-db.user.hasMany(db.pokemon , {foreignKey:'userId' , as : 'pokemons'})
-db.pokemon.belongsTo(db.user,{foreignKey : 'userId' , as : 'owner'})
+
 module.exports = db
